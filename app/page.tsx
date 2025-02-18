@@ -4,14 +4,14 @@ import Image from "next/image"
 export default function Home() {
     return (
         <main className="flex flex-col gap-8 w-full h-full items-center justify-center">
-            <section className="flex flex-col gap-8 w-full h-screen items-center justify-center pb-16">
-                <div className="flex gap-16 w-[66vw] h-[66vh] items-center justify-center overflow-hidden">
+            <section className="flex flex-col gap-8 w-full min-h-screen items-center justify-center pb-16">
+                <div className="flex gap-16 w-[66vw] min-h-[66vh] items-center justify-center overflow-hidden xl:flex-row flex-col">
                     <Image
                         src="/profile.png"
                         alt="Profile Photo"
                         width={0}
                         height={0}
-                        className="h-full w-auto"
+                        className="h-full w-auto max-h-[66vh]"
                         unoptimized
                         loading="eager"
                         priority
@@ -190,7 +190,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <footer className="w-full row-start-3 flex gap-6 flex-wrap items-center justify-center sticky bottom-0 pb-16 pt-5 bg-black">
+            <footer className="w-full row-start-3 flex gap-6 flex-wrap items-center justify-center sticky bottom-0 px-8 pb-16 pt-5 bg-black">
                 <a
                     className="flex items-center gap-2 hover:underline hover:underline-offset-4"
                     href="https://www.github.com/AimbotParce"
