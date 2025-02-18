@@ -1,5 +1,4 @@
-"use client"
-import { motion } from "framer-motion"
+import KeepScrolling from "@/components/KeepScrolling"
 import Image from "next/image"
 
 export default function Home() {
@@ -14,6 +13,8 @@ export default function Home() {
                         height={0}
                         className="h-full w-auto"
                         unoptimized
+                        loading="eager"
+                        priority
                     />
                     <div className="flex flex-col gap-4">
                         <h1 className="text-6xl">Hi, I&apos;m Marc Parcerisa</h1>
@@ -27,16 +28,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center gap-1">
-                    <p>Keep scrolling</p>
-                    <motion.button
-                        whileHover={{ y: 15 }}
-                        transition={{ type: "spring", stiffness: 100, duration: 0.1 }}
-                        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-                    >
-                        <Image aria-hidden src="/scroll-down.svg" alt="Scroll Down" width={40} height={40} />
-                    </motion.button>
-                </div>
+                <KeepScrolling />
             </section>
             <section className="flex flex-col gap-8 w-[66vw] h-fit items-center justify-center">
                 <h2 className="text-4xl">Projects</h2>
