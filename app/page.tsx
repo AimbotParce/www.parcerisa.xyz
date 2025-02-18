@@ -27,7 +27,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center gap-1 bg-black text-white p-4 rounded-lg">
+                <div className="flex flex-col items-center gap-1">
                     <p>Keep scrolling</p>
                     <motion.button
                         whileHover={{ y: 15 }}
