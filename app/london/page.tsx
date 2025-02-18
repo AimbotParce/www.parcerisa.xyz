@@ -1,3 +1,3 @@
-export default function Teamificator() {
-    return <p>You should be forwarded to a page which is currently under construction</p>
-}
+import MissingForwardedPage from "@/components/MissingPage"
+
+export default MissingForwardedPage
