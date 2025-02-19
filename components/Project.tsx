@@ -15,7 +15,7 @@ export default function Project({
                 <a
                     className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-3xl"
                     target="_blank"
-                    href="https://github.com/AimbotParce/BEC-Simulations"
+                    href={href}
                 >
                     {title}
                     <Image aria-hidden src="/new-window.svg" alt="New Window icon" width={20} height={20} />
