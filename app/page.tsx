@@ -101,7 +101,16 @@ export default function Home() {
                         Create teams of as many people as you want with as many constrains as you need. Maybe you want
                         to distribute the seats in the work meeting, or maybe you want to create a balanced team for a
                         sports game. Teamificator will allow you to ensure that you sit next to your crush and you
-                        don&apos;t have to talk to your boss.
+                        don&apos;t have to talk to your boss. This web page is currently being developed. You can keep
+                        an eye on its{" "}
+                        <a
+                            className="hover:underline hover:underline-offset-4 text-blue-400"
+                            target="_blank"
+                            href="https://github.com/AimbotParce/teamificator.parcerisa.xyz"
+                        >
+                            GitHub repository
+                        </a>{" "}
+                        if you want to see the progress.
                     </Project>
                     <Project href="https://mc.parcerisa.xyz" title="Minecraft Server Page">
                         I have a Minecraft server with my friends, and I wanted to create a page where we could see the
