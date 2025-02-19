@@ -97,18 +97,18 @@ export default function Home() {
                     description="As well as working on personal projects, I love to create small web pages that solve 
                     everyday problems, or that are just fun to use. Here are some of the web pages I've created:"
                 >
-                    <Project href="/teamificator" title="Teamificator">
+                    <Project href="https://teamificator.parcerisa.xyz" title="Teamificator">
                         Create teams of as many people as you want with as many constrains as you need. Maybe you want
                         to distribute the seats in the work meeting, or maybe you want to create a balanced team for a
                         sports game. Teamificator will allow you to ensure that you sit next to your crush and you
                         don&apos;t have to talk to your boss.
                     </Project>
-                    <Project href="/minecraft" title="Minecraft Server Page">
+                    <Project href="https://mc.parcerisa.xyz" title="Minecraft Server Page">
                         I have a Minecraft server with my friends, and I wanted to create a page where we could see the
                         server status, the players online, and manage the backups. I created a simple web page that
                         allows me to do just that using flask.
                     </Project>
-                    <Project href="/london" title="London Map">
+                    <Project href="https://london.parcerisa.xyz" title="London Map">
                         I visited London a few years ago, and loved it! The problem is that I have a terrible memory,
                         and wanted to visit as many iconic places as possible. The solution: create a map with all the
                         places I wanted to visit.
