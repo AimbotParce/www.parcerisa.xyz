@@ -108,7 +108,7 @@ export default function Home() {
                         server status, the players online, and manage the backups. I created a simple web page that
                         allows me to do just that using flask.
                     </Project>
-                    <Project href="https://london.parcerisa.xyz" title="London Map">
+                    <Project title="London Map">
                         I visited London a few years ago, and loved it! The problem is that I have a terrible memory,
                         and wanted to visit as many iconic places as possible. The solution: create a map with all the
                         places I wanted to visit.
