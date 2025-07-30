@@ -1,6 +1,7 @@
 import KeepScrolling from "@/components/KeepScrolling"
 import Project from "@/components/Project"
 import ProjectSection from "@/components/ProjectSection"
+import WebProject from "@/components/WebProject"
 import Image from "next/image"
 
 export default function Home() {
@@ -97,7 +98,21 @@ export default function Home() {
                     description="As well as working on personal projects, I love to create small web pages that solve 
                     everyday problems, or that are just fun to use. Here are some of the web pages I've created:"
                 >
-                    <Project href="https://teamificator.parcerisa.xyz" title="Teamificator">
+                    <WebProject title="Shared Flat Tracker" href="https://sft.parcerisa.xyz">
+                        I needed a way to collaboratively track all the flats that two colleagues and I found over the
+                        internet, to rent during the 2025-2026 academic year. So, I quickly spun up a web application
+                        using NextJS + Prisma to expose and interact with a PostgreSQL database, which I hosted on my
+                        Proxmox home lab. The page is still in a very early stage, so make sure to keep an eye on its{" "}
+                        <a
+                            className="hover:underline hover:underline-offset-4 text-blue-400"
+                            target="_blank"
+                            href="https://github.com/AimbotParce/SharedFlatTracker"
+                        >
+                            GitHub repository
+                        </a>{" "}
+                        if you want to see the progress.
+                    </WebProject>
+                    <WebProject title="Teamificator" href="https://london.parcerisa.xyz">
                         Create teams of as many people as you want with as many constrains as you need. Maybe you want
                         to distribute the seats in the work meeting, or maybe you want to create a balanced team for a
                         sports game. Teamificator will allow you to ensure that you sit next to your crush and you
@@ -111,17 +126,17 @@ export default function Home() {
                             GitHub repository
                         </a>{" "}
                         if you want to see the progress.
-                    </Project>
-                    <Project href="https://mc.parcerisa.xyz" title="Minecraft Server Page">
+                    </WebProject>
+                    <WebProject href="https://mc.parcerisa.xyz" title="Minecraft Server Page">
                         I have a Minecraft server with my friends, and I wanted to create a page where we could see the
                         server status, the players online, and manage the backups. I created a simple web page that
                         allows me to do just that using flask.
-                    </Project>
-                    <Project title="London Map">
+                    </WebProject>
+                    <WebProject title="London Map" href="https://london.parcerisa.xyz">
                         I visited London a few years ago, and loved it! The problem is that I have a terrible memory,
                         and wanted to visit as many iconic places as possible. The solution: create a map with all the
                         places I wanted to visit.
-                    </Project>
+                    </WebProject>
                 </ProjectSection>
                 <ProjectSection
                     title="Studies"
