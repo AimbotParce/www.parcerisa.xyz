@@ -40,7 +40,6 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:${{ github.ref_name }}
             ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:latest
           cache-from: type=registry,ref=ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:latest
           cache-to: type=inline
