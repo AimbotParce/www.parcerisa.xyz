@@ -1,22 +1,46 @@
-name: Deploy to Server
+name: Build on Push
+run-name: Build Docker Images on Push
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: read  # Allows the workflow to read the repository contents
+  packages: write  # Allows the workflow to push Docker images to GitHub Packages
+
+
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Login to self-hosted Docker registry
-        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login docker.parcerisa.xyz:5000 -u ${{ secrets.REGISTRY_USER }} --password-stdin
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Login to Docker Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}  # Use the GITHUB_TOKEN for authentication
 
-      - name: Build Docker image
-        run: docker build -t docker.parcerisa.xyz:5000/www-parcerisa-xyz:latest .
+      - id: lower-repo
+        shell: bash
+        run: echo "repository_owner=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_OUTPUT"
 
-      - name: Push Docker image to registry
-        run: docker push docker.parcerisa.xyz:5000/www-parcerisa-xyz:latest
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: |
+            ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:${{ github.ref_name }}
+            ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:latest
+          cache-from: type=registry,ref=ghcr.io/${{ steps.lower-repo.outputs.repository_owner }}/www-parcerisa-xyz:latest
+          cache-to: type=inline
